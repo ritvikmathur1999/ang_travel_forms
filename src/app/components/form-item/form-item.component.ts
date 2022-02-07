@@ -7,7 +7,9 @@ FormComponent
   styleUrls: ['./form-item.component.scss']
 })
 export class FormItemComponent implements OnInit {
+  @Input() ticketDetails:any[];
   @Input() userDetails:any[];
+
   constructor() { }
 
   ngOnInit(): void {

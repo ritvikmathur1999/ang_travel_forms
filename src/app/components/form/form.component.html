@@ -7,12 +7,12 @@
             <div class="from">
                 <label for="from">From</label>
                 <br>
-                <input type="text" name="from" formControlName="from" required>
+                <input type="text" formControlName="from" required>
             </div>
             <div class="to">
                 <label for="to">To</label>
                 <br>
-                <input type="text" name="to" formControlName="to" required>
+                <input type="text" formControlName="to" required>
             </div>
             <div class="email">
                 <label for="email">Email</label>
@@ -32,17 +32,17 @@
                 <div class="firstName">
                     <label for="firstName">First Name</label>
                     <br>
-                    <input type="text" name="firstName" formControlName="firstName">
+                    <input type="text" formControlName="firstName">
                 </div>
                 <div class="lastName">
                     <label for="lastName">Last Name</label>
                     <br>
-                    <input type="text" name="lastName" formControlName="lastName">
+                    <input type="text"  formControlName="lastName">
                 </div>
                 <div class="age">
                     <label for="age">Age</label>
                     <br>
-                    <input type="number" name="age" formControlName="age">
+                    <input type="number"  formControlName="age">
                 </div>
 
                 <div class="gender">
@@ -70,4 +70,9 @@
     </form>
 </div>
 
-<app-form-item [userDetails]="userDetails"></app-form-item>
+<div class="show-passengers-btn">
+<button (click)="showPassengers()">Show Passengers</button>
+<div *ngIf="isPassenger==true">
+<app-form-item [ticketDetails]="ticketDetails"></app-form-item>
+</div>
+</div>

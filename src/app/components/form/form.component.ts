@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   FormGroup,
   Validators,
@@ -15,7 +15,10 @@ export class FormComponent implements OnInit {
 
   //Final Data
   userDetails = [];
+  ticketDetails=[];
+  localItem:string
   count=1;
+  isPassenger: Boolean;
 
   addPassengerForm: FormGroup;
 
@@ -32,7 +35,9 @@ export class FormComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {
     this.addPassengerForm = this.passengerDetailsForm(this.count);
+    this.localItem = localStorage.getItem('this.userDetails')
   }
+  ngOnInit(): void {}
 
   //Form Format
   passengerForm = this.fb.group({
@@ -61,10 +66,20 @@ export class FormComponent implements OnInit {
     this.addMember.removeAt(-1)
   }
 
-  ngOnInit(): void {}
+  triggerLocalStorage(userDetails:any[]){
+    localStorage.clear()
+    localStorage.setItem("userDetails",JSON.stringify(userDetails))
+    this.ticketDetails=JSON.parse(localStorage.getItem("userDetails"))
+  }
+  
+  showPassengers(){
+    return this.isPassenger=true;
+  }
 
   onSubmit(){
+    this.userDetails=[];
     this.userDetails.push(this.passengerForm.value);
-    console.log(this.userDetails);
+    this.triggerLocalStorage(this.userDetails);
+    console.log(this.ticketDetails)
   }
 }

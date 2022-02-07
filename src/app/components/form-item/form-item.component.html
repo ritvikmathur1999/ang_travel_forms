@@ -1,15 +1,12 @@
+<div class="passengers">
+    <div class="static-info">
+        <p>From: {{ticketDetails[0].from}}</p>
+        <p>To: {{ticketDetails[0].to}}</p>
+        <p>Email: {{ticketDetails[0].email}}</p>
+        <p>Contact Number: {{ticketDetails[0].phoneNo}}</p>
 
+    </div>
 
-<div class="passengers" *ngIf="userDetails.length!=0; elseBlock">
-    
-<div class="static-info">
-    <p>From: {{userDetails[0].from}}</p>
-    <p>To: {{userDetails[0].to}}</p>
-    <p>Email: {{userDetails[0].email}}</p>
-    <p>Contact Number: {{userDetails[0].phoneNo}}</p>
-
-</div>
-    
     <div class="passenger-details-title">
         <h3>Passengers Details</h3>
     </div>
@@ -20,13 +17,14 @@
             <th>Age</th>
             <th>Gender</th>
         </tr>
-        <tr *ngFor="let item of userDetails[0].addMember;let i = index">
-            <td>{{i+1}}</td>
-            <td>{{userDetails[0].addMember[i].firstName}} {{userDetails[0].addMember[i].lastName}}</td>
-            <td>{{userDetails[0].addMember[i].age}}</td>
-            <td>{{userDetails[0].addMember[i].gender}}</td>
-        </tr>
+        <ng-container *ngFor="let item of ticketDetails; let j=index">
+            <tr *ngFor="let item of ticketDetails[j].addMember;let i = index">
+                <td>{{ticketDetails[j].addMember[i].id}}</td>
+                <td>{{ticketDetails[j].addMember[i].firstName}} {{ticketDetails[j].addMember[i].lastName}}</td>
+                <td>{{ticketDetails[j].addMember[i].age}}</td>
+                <td>{{ticketDetails[j].addMember[i].gender}}</td>
+            </tr>
+        </ng-container>
     </table>
-    
-</div>
 
+</div>
