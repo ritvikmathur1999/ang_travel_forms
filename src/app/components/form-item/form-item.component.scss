@@ -7,31 +7,36 @@
 
 
 .passengers{
-    border: 1px solid black;
+    border: 1px solid white;
     margin: 10px;
-}
-.items{
-    // margin-right: 21px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-table{
-    width: 100%;
-}
-
-td,th{
-    text-align: left;
-    // margin: 5px;
-    padding: 8px;
-}
-
-tr:nth-child(even){
-    background-color: rgb(182, 182, 182);
-
-}
-
-.static-info > *{
-    margin: 10px 0 10px 10px;
+    color: white;
+    .ticket-title{
+        text-align: center;
+    }
+    .items{
+        // margin-right: 21px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    
+    table{
+        width: 100%;
+    }
+    
+    td,th{
+        text-align: left;
+        // margin: 5px;
+        padding: 8px;
+    }
+    
+    tr:nth-child(even){
+        background-color: rgb(255, 255, 255);
+        color: black;
+    
+    }
+    
+    .static-info > *{
+        margin: 10px 0 10px 10px;
+    }
 }

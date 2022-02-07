@@ -1,6 +1,7 @@
 <div class="form-title">
     <h2>Let's Travel</h2>
 </div>
+
 <div class="travel-form">
     <form [formGroup]="passengerForm">
         <div class="basic-info">
@@ -9,70 +10,90 @@
                 <br>
                 <input type="text" formControlName="from" required>
             </div>
+            
             <div class="to">
                 <label for="to">To</label>
                 <br>
                 <input type="text" formControlName="to" required>
             </div>
+
             <div class="email">
                 <label for="email">Email</label>
                 <br>
                 <input type="email" formControlName="email" required>
             </div>
+
             <div class="phoneNo">
-                <label for="phoneNo">Contact Number</label>
+                <label for="phoneNo">Phone</label>
                 <br>
                 <input type="tel" formControlName="phoneNo" required>
             </div>
+
         </div>
+
         <h4>Add Passenger Details</h4>
-        <div class="dynamic-form" formArrayName="addMember" *ngFor="let p of addMember.controls; let i = index">
-            <div [formGroupName]="i">
-                <p>Passenger ID:{{i+1}}</p>
-                <div class="firstName">
-                    <label for="firstName">First Name</label>
-                    <br>
-                    <input type="text" formControlName="firstName">
-                </div>
-                <div class="lastName">
-                    <label for="lastName">Last Name</label>
-                    <br>
-                    <input type="text"  formControlName="lastName">
-                </div>
-                <div class="age">
-                    <label for="age">Age</label>
-                    <br>
-                    <input type="number"  formControlName="age">
-                </div>
 
-                <div class="gender">
-                    <label for="gender">Gender</label>
-                    <div> <select name="gender" formControlName="gender">
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                        </select>
+        <div class="dynamic-form-container">
+            <div class="dynamic-form" formArrayName="addMember" *ngFor="let p of addMember.controls; let i = index">
+                <div [formGroupName]="i">
+                    <p>Passenger ID: {{i+1}}</p>
+
+                    <div class="firstName">
+                        <label for="firstName">First Name</label>
+                        <br>
+                        <input type="text" formControlName="firstName">
                     </div>
-                </div>
 
-                <div class="delete-passenger-btn">
-                    <button (click)="deletePassenger()">Delete</button>
+                    <div class="lastName">
+                        <label for="lastName">Last Name</label>
+                        <br>
+                        <input type="text" formControlName="lastName">
+                    </div>
+
+                    <div class="age">
+                        <label for="age">Age</label>
+                        <br>
+                        <input type="number" formControlName="age">
+                    </div>
+
+                    <div class="gender">
+                        <label for="gender">Gender</label>
+                        <div> <select name="gender" formControlName="gender">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="delete-passenger-btn">
+                        <button (click)="deletePassenger()">Delete</button>
+                    </div>
+
                 </div>
+            </div>
+        </div>
+
+        <div class="add-btn">
+            <button class="add" (click)="addPassenger()">+</button>
+        </div>
+
+        <br>
+        <div class="button-group">
+
+            <div class="submit-btn">
+                <button type="submit" (click)="onSubmit()">Submit</button>
+            </div>
+
+            <div class="show-passengers-btn">
+                <button (click)="showPassengers()">Show Passengers</button>
             </div>
 
         </div>
-        <div class="add-btn">
-            <button class="add" (click)="addPassenger()">Add Passenger</button>
-        </div>
-        <br>
-        <div class="btn">
-            <button type="submit" (click)="onSubmit()">Submit</button>
-        </div>
-    </form>
-</div>
 
-<div class="show-passengers-btn">
-<button (click)="showPassengers()">Show Passengers</button>
-<div *ngIf="isPassenger==true">
-<app-form-item [ticketDetails]="ticketDetails"></app-form-item>
-</div>
+    </form>
+
+    <div *ngIf="isPassenger==true">
+        <app-form-item [ticketDetails]="ticketDetails"></app-form-item>
+    </div>
+
 </div>

@@ -64,6 +64,7 @@ export class FormComponent implements OnInit {
 
   deletePassenger(){
     this.addMember.removeAt(-1)
+    this.count-=1;
   }
 
   triggerLocalStorage(userDetails:any[]){
