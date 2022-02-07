@@ -1,0 +1,73 @@
+<div class="form-title">
+    <h2>Let's Travel</h2>
+</div>
+<div class="travel-form">
+    <form [formGroup]="passengerForm">
+        <div class="basic-info">
+            <div class="from">
+                <label for="from">From</label>
+                <br>
+                <input type="text" name="from" formControlName="from" required>
+            </div>
+            <div class="to">
+                <label for="to">To</label>
+                <br>
+                <input type="text" name="to" formControlName="to" required>
+            </div>
+            <div class="email">
+                <label for="email">Email</label>
+                <br>
+                <input type="email" formControlName="email" required>
+            </div>
+            <div class="phoneNo">
+                <label for="phoneNo">Contact Number</label>
+                <br>
+                <input type="tel" formControlName="phoneNo" required>
+            </div>
+        </div>
+        <h4>Add Passenger Details</h4>
+        <div class="dynamic-form" formArrayName="addMember" *ngFor="let p of addMember.controls; let i = index">
+            <div [formGroupName]="i">
+                <p>Passenger ID:{{i+1}}</p>
+                <div class="firstName">
+                    <label for="firstName">First Name</label>
+                    <br>
+                    <input type="text" name="firstName" formControlName="firstName">
+                </div>
+                <div class="lastName">
+                    <label for="lastName">Last Name</label>
+                    <br>
+                    <input type="text" name="lastName" formControlName="lastName">
+                </div>
+                <div class="age">
+                    <label for="age">Age</label>
+                    <br>
+                    <input type="number" name="age" formControlName="age">
+                </div>
+
+                <div class="gender">
+                    <label for="gender">Gender</label>
+                    <div> <select name="gender" formControlName="gender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="delete-passenger-btn">
+                    <button (click)="deletePassenger()">Delete</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="add-btn">
+            <button class="add" (click)="addPassenger()">Add Passenger</button>
+        </div>
+        <br>
+        <div class="btn">
+            <button type="submit" (click)="onSubmit()">Submit</button>
+        </div>
+    </form>
+</div>
+
+<app-form-item [userDetails]="userDetails"></app-form-item>

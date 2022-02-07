@@ -1,0 +1,46 @@
+<div class="travel-form">
+    <form [formGroup]="passengerForm" (ngSubmit)="onSubmit()">
+
+        <div class="fname">
+            <label for="fname">First Name</label>
+            <br>
+            <input type="text" name="fname" formControlName="firstName">
+        </div>
+        <div class="lname">
+            <label for="lname">Last Name</label>
+            <br>
+            <input type="text" name="lname" formControlName="lastName">
+        </div>
+        <div class="email">
+            <label for="email">Email</label>
+            <br>
+            <input type="email" name="email" formControlName="email">
+        </div>
+        <h4>Passenger Details</h4>
+        <div class="dynamic-form" formArrayName="addMember" *ngFor="let p of addMember.controls; let i = index">
+
+            
+
+            <label for="name">Enter {{formatDetails[i]}}</label>
+            <div>
+            <!-- <select >
+                <option value="name">Name</option>
+                <option value="age">Age</option>
+                <option value="gender">Gender</option>
+            </select> -->
+        </div>
+            <input [formControlName]="i"type="text" class="dynamic-data">
+        
+            <!-- <label for="age">Age</label>
+            <input [formControlName]="i+1" type="number" class="dynamic-age"/> -->
+        </div>
+        <div class="btn">
+            <button type="submit">Submit</button>
+        </div>
+        
+    </form>
+    
+    <button class="add" (click)="addPassenger()" >Add</button>
+   
+    
+</div>

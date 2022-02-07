@@ -1,0 +1,80 @@
+
+$bg-color:rgb(206, 206, 206);
+$card-bg-color:rgb(153, 153, 153);
+
+.form{
+    margin-left: 1rem;
+}
+
+.form > *{
+    padding: 0.5rem;
+}
+
+.dynamic-form > *{
+    // margin-left: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+input{
+    width: 90%;
+    margin-bottom: 6px;
+}
+
+.add-btn{
+    // margin: auto;
+    text-align: center;
+}
+
+.btn{
+    margin-top: 1rem;
+}
+
+.form-title{
+    h2{
+        text-align: center;
+        margin:10px;
+    };
+}
+
+.basic-info{
+    width: 30%;
+    margin: auto;
+    background-color: $card-bg-color;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.basic-info > *{
+    margin: 5px;
+}
+
+.travel-form{
+    padding: 20px 10px;
+    background-color: $bg-color;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    h4{
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+    .btn{
+        margin: auto;
+        text-align: center;
+    }
+}
+
+.dynamic-form{
+    margin: auto;
+    width: 30%;
+    background-color: $card-bg-color;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.delete-passenger-btn{
+    margin: 10px 0 10px 0;
+}

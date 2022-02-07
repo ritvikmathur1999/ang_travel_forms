@@ -1,0 +1,32 @@
+
+
+<div class="passengers" *ngIf="userDetails.length!=0; elseBlock">
+    
+<div class="static-info">
+    <p>From: {{userDetails[0].from}}</p>
+    <p>To: {{userDetails[0].to}}</p>
+    <p>Email: {{userDetails[0].email}}</p>
+    <p>Contact Number: {{userDetails[0].phoneNo}}</p>
+
+</div>
+    
+    <div class="passenger-details-title">
+        <h3>Passengers Details</h3>
+    </div>
+    <table>
+        <tr>
+            <th>Passenger ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+        </tr>
+        <tr *ngFor="let item of userDetails[0].addMember;let i = index">
+            <td>{{i+1}}</td>
+            <td>{{userDetails[0].addMember[i].firstName}} {{userDetails[0].addMember[i].lastName}}</td>
+            <td>{{userDetails[0].addMember[i].age}}</td>
+            <td>{{userDetails[0].addMember[i].gender}}</td>
+        </tr>
+    </table>
+    
+</div>
+
