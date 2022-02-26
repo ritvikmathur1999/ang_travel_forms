@@ -9,16 +9,15 @@
     background-image: linear-gradient(315deg, #7f53ac 0%, #647dee 74%); 
 }
 
+
 .form-title {
   h2 {
-    margin: 10px;
+    margin: 13px;
   }
 }
 
 .travel-form {
-  padding: 20px 10px;
-  width: 98%;
-  margin: auto;
+  margin: 6px;
   margin-bottom: 20px;
   border-radius: 10px;
 
@@ -29,20 +28,41 @@
   .form > * {
     padding: 0.5rem;
   }
-  h4 {
-    margin-top: 30px;
-    margin-bottom: 10px;
-  }
 
   .basic-info {
-    width: 30%;
-    padding: 10px 25px 10px 15px;
+    width: 50%;
+    // display: flex;
+    // text-align: center;
+    // justify-content: space-between;
+    // flex-direction: row;
+    
+  }
+
+  .route{
     @include background-gradient();
+    padding: 10px 25px 10px 15px;
     color: black;
-    padding: 10px;
-    margin: auto;
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0.3px 0.3px 3px 0.3px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .contact-info {
+    margin: 5px;
+    padding: 2px;
+    input{
+      width: 50%;
+    }
+  }
+
+  .passengerOps{
+    display: flex;
+    justify-content: space-between;
+    margin: 6px;
   }
 
   .basic-info > * {
@@ -50,6 +70,7 @@
   }
 
   .dynamic-form-container {
+    margin: 6px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -70,11 +91,11 @@
         color: white;
       }
     }
-    p{
+    .passenger-id{
       margin-bottom: 10px;
       background-color: rgb(61, 61, 61);
       box-shadow: 0px 0px 1px 0px white;
-      border-radius: 10px;
+      border-radius: 4px;
       width: fit-content;
       color: white;
       padding: 2px 7px;
@@ -107,8 +128,9 @@
   }
   input {
     width: 100%;
+    height: 25px;
     padding: 3px 2px;
-    border-radius: 7px;
+    border-radius: 2px;
     border: none;
     margin-bottom: 10px;
     box-shadow: 0.2px 0.2px 0.6px 0.1px rgb(255, 211, 131);
@@ -125,7 +147,7 @@
   button {
     @include button-decoration;
     border: none;
-    border-radius: 9px;
+    border-radius: 3px;
     padding: 2px 5px 2px 5px;
     box-shadow: 0px 0px 1px 0px;
     color: white;

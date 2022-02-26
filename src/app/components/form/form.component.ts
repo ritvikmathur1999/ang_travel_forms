@@ -61,6 +61,12 @@ export class FormComponent implements OnInit {
     this.count+=1;
     this.addMember.push(this.passengerDetailsForm(this.count));
   }
+  
+  clearPassengers()
+  {
+    this.addMember.controls=[]
+    this.addPassenger()
+  }
 
   deletePassenger(){
     this.addMember.removeAt(-1)
@@ -82,5 +88,8 @@ export class FormComponent implements OnInit {
     this.userDetails.push(this.passengerForm.value);
     this.triggerLocalStorage(this.userDetails);
     console.log(this.ticketDetails)
+    this.showPassengers()
   }
+
+
 }
